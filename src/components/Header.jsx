@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const Header = ({ about, skills, projects }) => {
+const Header = ({ about, projects, skills }) => {
   const [hamOpen, setHamOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const navRef = useRef(null);
@@ -102,8 +102,8 @@ const Header = ({ about, skills, projects }) => {
         </button>
         <nav className={hamOpen ? 'show' : ''} ref={navRef}>
           <a href="/#About">{about}</a>
-          <a href="/#Skills">{skills}</a>
           <a href="/#Projects">{projects}</a>
+          <a href="/#Skills">{skills}</a>
         </nav>
       </div>
 
