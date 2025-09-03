@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext.jsx';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Header = ({ about, skills, projects }) => {
   const [hamOpen, setHamOpen] = useState(false);
