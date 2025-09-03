@@ -19,7 +19,7 @@ const AppContent = () => {
         title={t.about.title}
         paragraph1={t.about.paragraph1}
         paragraph2={t.about.paragraph2}
-        profileImage="src/assets/images/fotocv.jpg"
+        profileImage="/src/assets/images/fotocv.jpg"
       />
     </>
   );

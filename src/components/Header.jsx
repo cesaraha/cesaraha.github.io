@@ -11,9 +11,9 @@ const Header = ({ about, skills, projects }) => {
   const { currentLanguage, setLanguage, t } = useLanguage();
 
   const languages = [
-    { code: 'fr', flag: 'src/assets/images/fra-lang.png', name: 'Français' },
-    { code: 'en', flag: 'src/assets/images/eng-lang.png', name: 'English' },
-    { code: 'sp', flag: 'src/assets/images/spa-lang.png', name: 'Español' }
+    { code: 'fr', flag: '/src/assets/images/fra-lang.png', name: 'Français' },
+    { code: 'en', flag: '/src/assets/images/eng-lang.png', name: 'English' },
+    { code: 'sp', flag: '/src/assets/images/spa-lang.png', name: 'Español' }
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
@@ -84,7 +84,7 @@ const Header = ({ about, skills, projects }) => {
   return (
     <header className="header">
       <a href="/" className="logo-link">
-        <img className="logo" src="src/assets/images/caha-logo-blue.png" alt="Caha logo" />
+        <img className="logo" src="/src/assets/images/caha-logo-blue.png" alt="Caha logo" />
       </a>
 
       <div className="center-content">
@@ -96,7 +96,7 @@ const Header = ({ about, skills, projects }) => {
           aria-expanded={hamOpen}
         >
           <img 
-            src={hamOpen ? 'img/xmark-solid.svg' : 'img/bars-solid.svg'} 
+            src={hamOpen ? '/src/assets/images/xmark-solid.svg' : '/src/assets/images/bars-solid.svg'} 
             alt="" 
           />
         </button>
