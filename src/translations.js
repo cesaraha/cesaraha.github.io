@@ -94,6 +94,13 @@ export const translations = {
         },
         readMore: "Afficher plus",
         viewOnGithub: "Voir sur GitHub",
+        footer: {
+            contactTitle: "Contact",
+            connectTitle: "Connect",
+            rightsText: "César Aha. Tous droits réservés.",
+            emailLabel: "Email",
+            phoneLabel: "Téléphone"
+        },
         contact: {
             title: "Contactez-moi!",
             description: "Je serais ravi d’avoir de vos nouvelles ! Que vous ayez une question, que vous souhaitiez discuter d’un projet ou simplement dire bonjour, n’hésitez pas à me contacter.",
@@ -232,6 +239,13 @@ export const translations = {
         },
         readMore: "Read more",
         viewOnGithub: "View on GitHub",
+        footer: {
+            contactTitle: "Contact",
+            connectTitle: "Connect",
+            rightsText: "César Aha. All rights reserved.", 
+            emailLabel: "Email",
+            phoneLabel: "Phone"
+        },
         contact: {
             title: "Get in touch!",
             description: "I'd love to hear from you! Whether you have a question, want to discuss a project, or just want to say hello, feel free to reach out.",
@@ -370,6 +384,13 @@ export const translations = {
         },
         readMore: "Ver más",
         viewOnGithub: "Ver en GitHub",
+        footer: {
+            contactTitle: "Contacto",
+            connectTitle: "Conectar",
+            rightsText: "César Aha. Todos los derechos reservados.",
+            emailLabel: "Email",
+            phoneLabel: "Teléfono"
+        },
         contact: {
             title: "Contáctame!",
             description: "¡Me encantaría leerte! Ya sea que tengas una pregunta, quieras hablar sobre un proyecto o simplemente saludar, no dudes en ponerte en contacto conmigo.",
