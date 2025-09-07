@@ -42,7 +42,7 @@ const Projects = ({
   useEffect(() => {
     const handleEscapeKey = (event) => handleKeydown(event);
     document.addEventListener('keydown', handleEscapeKey);
-    
+
     return () => {
       document.removeEventListener('keydown', handleEscapeKey);
       // Cleanup: restore scrolling if component unmounts while modal is open
@@ -105,7 +105,7 @@ const Projects = ({
 
   return (
     <>
-      <div className="card-section margin-section">
+      <div className="card-section margin-section" id="Projects">
         <h1 className="section-title">{titleSection}</h1>
         <div className="card-group">
           {visibleProjects.map((project, index) => (
@@ -148,7 +148,10 @@ const Projects = ({
             </div>
 
             <div className="modal-body">
-              <p className="modal-description">{currentProject.description}</p>
+              <p
+                className="modal-description"
+                dangerouslySetInnerHTML={{ __html: currentProject.description }}
+              />
             </div>
           </div>
         </div>
