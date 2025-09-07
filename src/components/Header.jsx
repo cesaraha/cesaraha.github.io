@@ -4,6 +4,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Header = ({ about, projects, skills }) => {
   const [hamOpen, setHamOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const navRef = useRef(null);
   const hamRef = useRef(null);
   const langRef = useRef(null);
@@ -19,12 +21,40 @@ const Header = ({ about, projects, skills }) => {
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[0];
   const otherLanguages = languages.filter(lang => lang.code !== currentLanguage);
 
+// Scroll handler
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    
+    // Show header when scrolling up, hide when scrolling down
+    if (currentScrollY < lastScrollY || currentScrollY < 10) {
+      setIsHeaderVisible(true);
+    } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      setIsHeaderVisible(false);
+      // Close any open dropdowns when hiding
+      setHamOpen(false);
+      setLangDropdownOpen(false);
+    }
+    
+    setLastScrollY(currentScrollY);
+  };
+
   const toggleMenu = () => {
     setHamOpen(!hamOpen);
   };
 
   const toggleLangDropdown = () => {
     setLangDropdownOpen(!langDropdownOpen);
+  };
+
+// Handle navigation link clicks
+  const handleNavLinkClick = () => {
+    setHamOpen(false);
+    setIsHeaderVisible(false);
+    
+    // Show header again after navigation animation completes
+    setTimeout(() => {
+      setIsHeaderVisible(true);
+    }, 800); // Adjust timing based on your scroll animation duration
   };
 
   const handleClickOutside = (event) => {
@@ -72,17 +102,19 @@ const Header = ({ about, projects, skills }) => {
   };
 
   useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
     document.addEventListener('click', handleClickOutside);
     document.addEventListener('keydown', handleKeydown);
     
     return () => {
+      window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('click', handleClickOutside);
       document.removeEventListener('keydown', handleKeydown);
     };
-  }, [hamOpen, langDropdownOpen]);
+  }, [lastScrollY, hamOpen, langDropdownOpen]);
 
   return (
-    <header className="header">
+    <header className={`header ${isHeaderVisible ? 'header-visible' : 'header-hidden'}`}>
       <a href="/" className="logo-link">
         <img className="logo" src="/images/caha-logo-blue.png" alt="Caha logo" />
       </a>
@@ -101,9 +133,9 @@ const Header = ({ about, projects, skills }) => {
           />
         </button>
         <nav className={hamOpen ? 'show' : ''} ref={navRef}>
-          <a href="/#About">{about}</a>
-          <a href="/#Projects">{projects}</a>
-          <a href="/#Skills">{skills}</a>
+          <a href="#About">{about}</a>
+          <a href="#Projects">{projects}</a>
+          <a href="#Skills">{skills}</a>
         </nav>
       </div>
 
