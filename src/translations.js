@@ -59,17 +59,58 @@ export const translations = {
             project1: {
                 heading: "Imagerie optique dans des milieux diffusants",
                 details: "Modèles de Deep Learning pour la reconstruction d'objets derrière des milieux diffusants (thèse de doctorat)",
-                description: "Développement d'algorithmes de Deep Learning pour la reconstruction de projections laser 2D traversant une couche diffusive (projet de thèse de doctorat)"
+                description: "Turbides (ou diffusants) désignent les matériaux qui ne laissent pas passer la lumière, " +
+                    "comme les substances opaques. Le principal défi de l’application des algorithmes de reconstruction " +
+                    "d’images basés sur l’Apprentissage Profond est que chaque modèle est spécifique au milieu sur lequel " +
+                    "il a été entraîné. Si le milieu change – même si l’objet reste le même – les performances du modèle " +
+                    "diminuent considérablement.<br/> Ce problème devient encore plus complexe dans le cas de la peau humaine, " +
+                    "qui est un milieu dynamique. Même lorsque les données d’entraînement proviennent d’une seule personne, " +
+                    "les propriétés de la peau évoluent avec le temps, ce qui signifie que les conditions vues pendant " +
+                    "l’entraînement ne sont pas stables.<br/> L’<strong>objectif</strong> de cette thèse était " +
+                    "d’améliorer la <strong>généralisation des modèles d’imagerie basés sur l’Apprentissage Profond</strong> " +
+                    "pour la <strong>reconstruction d’objets</strong> cachés derrière ou à l’intérieur de <strong>milieux diffusants</strong> " +
+                    "dans des <strong>systèmes optiques</strong>. Pour ce faire, plusieurs architectures de réseaux et stratégies " +
+                    "de paramétrisation ont été explorées.<br/> Les modèles présentés ici – Dense CNN et U-net – ont été entraînés " +
+                    "à la fois avec des images de distribution d’intensité (appelées speckles) et avec des informations de Fourier " +
+                    "des objets dérivées de ces speckles (en particulier l’autocorrélation et le spectre de Fourier).<br/> " +
+                    "L’analyse complète et les résultats se trouvent dans la thèse publiée au lien suivant : " +
+                    "<a href='https://qmro.qmul.ac.uk/xmlui/handle/123456789/105754' target='_blank' rel='noopener noreferrer'>" +
+                    "PDF de la thèse – Queen Mary University of London</a>."
             },
             project2: {
                 heading: "Site portfolio développé avec Svelte et Vite",
                 details: "Site personnel créé avec Svelte dans VS Code, déployé via GitHub et hébergé sur Netlify",
-                description: "Site portfolio personnel développé avec Svelte dans VS Code, déployé via GitHub et mis à jour automatiquement sur Netlify à chaque commit."
+                description: "Ce portfolio et mon site freelance, <a href='https://c-aha.com'>c-aha.com</a>, " +
+                    "sont deux projets connectés mais distincts.<br/><br/>" +
+                    "c-aha.com est le moyen le plus simple de me contacter " +
+                    "pour des collaborations freelance. Il a été développé avec <strong>Svelte</strong>, " +
+                    "en tirant parti de la réutilisabilité de ses composants et de sa configuration simple. " +
+                    "Le site est déployé en continu sur <strong>Netlify</strong>, et se met automatiquement " +
+                    "à jour après chaque push <strong>Git</strong>.<br/><br/>" +
+                    "Ce portfolio a été développé avec <strong>React</strong>, l’un des frameworks JavaScript " +
+                    "les plus utilisés. Sa structure reflète celle de mon projet Svelte, ce qui a rendu la transition " +
+                    "entre les deux naturelle et efficace. J’ai décidé de séparer le portfolio du site freelance " +
+                    "afin de présenter mes projets plus clairement, tout en gardant le contenu professionnel " +
+                    "sur une page dédiée.<br/><br/>" +
+                    "Ce portfolio est hébergé sur <strong>GitHub Pages</strong>, avec <strong>GitHub Actions</strong> " +
+                    "assurant les déploiements automatisés après chaque push. Vous pouvez retrouver les deux dépôts " +
+                    "sur mon <a href='https://github.com/cesaraha'>profil GitHub</a>."
+
             },
             project3: {
                 heading: "Generateur IA d'exercices mathematiques",
                 details: "Plateforme de génération de contenu mathématique, avec suivi des performances et exercices adaptatifs.",
-                description: "Application conçue pour une expérience personnalisée de l’élève, basée sur son niveau, son temps de réflexion et ses erreurs récurrentes. Moteur : Python - Backend : FastAPI - Frontend : Svelte"
+                description: "Ce projet est un <strong>générateur d’opérations mathématiques</strong>. Dans un premier temps, " +
+                    "il produit des exercices aléatoires à partir des opérations arithmétiques sélectionnées (addition, " +
+                    "soustraction, multiplication et division). L’utilisateur choisit également le nombre d’exercices.<br/><br/>" +
+                    "Après une première session, le modèle commence à apprendre des performances de l’utilisateur et adapte " +
+                    "les exercices à son niveau ainsi qu’aux erreurs les plus fréquentes. Par exemple, si des erreurs surviennent " +
+                    "dans des multiplications impliquant la table de 7, le modèle proposera davantage d’exercices similaires pour " +
+                    "fournir de la pratique et aider l’utilisateur à surmonter cette difficulté. Si trop d’erreurs sont commises, " +
+                    "le niveau diminue, et si tout est correct, le niveau augmente.<br/><br/>" +
+                    "Cette application a été développée avec <strong>Svelte</strong> pour le frontend, <strong>FastAPI</strong> " +
+                    "comme backend, <strong>Axios</strong> pour les relier, et <strong>Python</strong> pour l’agent d’apprentissage."
+
             },
             project4: {
                 heading: "OCR pour documents scannés et images",
@@ -204,17 +245,56 @@ export const translations = {
             project1: {
                 heading: "Optical imaging in scattering media",
                 details: "Deep Learning models for the reconstruction of objects behind scattering media (PhD thesis)",
-                description: "Development of Deep Learning algorithms for the reconstruction of 2D laser projections going through a diffusive layer (Doctoral thesis project)"
+                description: "Turbid (or scattering) media refers to materials that do not allow light to pass through, " +
+                    "such as opaque substances. The main challenge in applying Deep Learning-based image reconstruction " +
+                    "algorithms is that each model is specific to the medium it was trained on. If the medium changes " +
+                    "- even if the object remains the same - the model’s performance drops significantly.<br/><br/>" +
+                    "This issue becomes more complex in the case of human skin, which is a dynamic medium. Even when " +
+                    "training data is collected from a single person, the skin’s properties change over time, meaning the " +
+                    "conditions seen during training are not stable.<br/><br/>" +
+                    "The <strong>aim</strong> of this thesis was to improve the <strong>generalisation of Deep Learning-based imaging models</strong> for the <strong>" +
+                    "reconstruction of objects</strong> hidden behind or within <strong>scattering media</strong> in <strong>" +
+                    "optical systems</strong>. To address this, several network architectures and parameterisation strategies " +
+                    "were explored.<br/><br/>" +
+                    "The models presented here - Dense CNN and U-net - were trained using both intensity " +
+                    "distribution images (known as speckles) and Fourier information of the objects derived from those " +
+                    "speckles (specifically autocorrelation and Fourier spectrum data).<br/><br/>" +
+                    "The full analysis and results can be found in the published thesis at the following link: " +
+                    "<a href='https://qmro.qmul.ac.uk/xmlui/handle/123456789/105754' target='_blank' rel='noopener noreferrer'>" +
+                    "Thesis PDF – Queen Mary University of London</a>."
             },
             project2: {
                 heading: "Portfolio website using Svelte and Vite",
                 details: "Personal website built using Svelte in VS Code, deployed by GitHub and hosted by Netlify",
-                description: "Personal portfolio website built with Svelte in VS Code, deployed via GitHub and automatically updated on Netlify with each commit."
+                description: "This portfolio and my freelance website, <a href='https://c-aha.com'>c-aha.com</a>, " +
+                    "are two connected but distinct projects.<br/><br/>" +
+                    "c-aha.com is the easiest way to reach me for freelance collaborations. " +
+                    "It was built with <strong>Svelte</strong>, leveraging its reusable components and simple " +
+                    "configuration. The site is continuously deployed to <strong>Netlify</strong>, updating " +
+                    "automatically after every <strong>Git</strong> push.<br/><br/>" +
+                    "This portfolio was developed with <strong>React</strong>, one of the most widely used " +
+                    "JavaScript frameworks. Its structure mirrors my Svelte project, making the transition " +
+                    "between the two natural and efficient. I decided to separate the portfolio from the " +
+                    "freelance site to present my projects clearly while keeping business-related content " +
+                    "on a dedicated page.<br/><br/>" +
+                    "This portfolio is hosted on <strong>GitHub Pages</strong> with <strong>GitHub Actions</strong> " +
+                    "handling automated deployments on every push. You can find both repositories on my " +
+                    "<a href='https://github.com/cesaraha'>GitHub profile</a>."
+
             },
             project3: {
                 heading: "AI math generator",
                 details: "Platform for practicing mathematical operations with performance tracker and adaptive exercises",
-                description: "App designed for the personalised experience of the student, based on level, time of reflexion and recurrent mistakes. Engine: Python - Backend: FastAPI - Frontend: Svelte"
+                description: "This project is a <strong>mathematical operations generator</strong>. At first, it produces " +
+                    "random exercises from the selected arithmetic operations (addition, subtraction, multiplication, " +
+                    "and division). The user also chooses the number of exercises.<br/><br/>" +
+                    "After an initial session, the model begins learning from the user’s performance and adapts " +
+                    "the exercises to their level and common mistakes. For example, if errors occur in multiplication " +
+                    "exercises involving the table of 7, the model will provide more similar problems to give practice " +
+                    "and help the user overcome that difficulty. If too many mistakes are made, the level decreases, " +
+                    "and if everything is correct, the level increases.<br/><br/>" +
+                    "This application was built using <strong>Svelte</strong> for the frontend, <strong>FastAPI</strong> " +
+                    "as the backend, <strong>Axios</strong> to connect them, and <strong>Python</strong> for the learning agent."
             },
             project4: {
                 heading: "OCR for scanned documents and images",
@@ -242,7 +322,7 @@ export const translations = {
         footer: {
             contactTitle: "Contact",
             connectTitle: "Connect",
-            rightsText: "César Aha. All rights reserved.", 
+            rightsText: "César Aha. All rights reserved.",
             emailLabel: "Email",
             phoneLabel: "Phone"
         },
@@ -349,17 +429,56 @@ export const translations = {
             project1: {
                 heading: "Imagenología óptica en medios difusivos",
                 details: "Modelos de Deep Learning para la reconstrucción de objetos detrás de medios difusivos (tesis doctoral)",
-                description: "Desarrollo de algoritmos de aprentizaje profundo (Deep Learning) para la reconstrucción de proyecciones láser 2D a través de capas difusivas (projecto de tesis de doctorado)"
+                description: "Los medios turbios (o dispersivos) se refieren a materiales que no permiten el paso de la luz, " +
+                    "como las sustancias opacas. El principal desafío al aplicar algoritmos de reconstrucción de imágenes " +
+                    "basados en Deep Learning es que cada modelo es específico del medio en el que fue entrenado. Si el medio cambia, " +
+                    "incluso si el objeto sigue siendo el mismo, el rendimiento del modelo disminuye significativamente.<br/> " +
+                    "Este problema se vuelve aún más complejo en el caso de la piel humana, que es un medio dinámico. Incluso " +
+                    "cuando los datos de entrenamiento se recogen de una sola persona, las propiedades de la piel cambian con el tiempo, " +
+                    "lo que significa que las condiciones vistas durante el entrenamiento no son estables.<br/> El <strong>objetivo</strong> " +
+                    "de esta tesis fue mejorar la <strong>generalización de los modelos de imagen basados en Deep Learning</strong> " +
+                    "para la <strong>reconstrucción de objetos</strong> ocultos detrás o dentro de <strong>medios dispersivos</strong> " +
+                    "en <strong>sistemas ópticos</strong>. Para ello, se exploraron varias arquitecturas de redes y estrategias " +
+                    "de parametrización.<br/> Los modelos presentados aquí – Dense CNN y U-net – fueron entrenados tanto con imágenes " +
+                    "de distribución de intensidad (conocidas como speckles) como con información de Fourier de los objetos derivada " +
+                    "de dichos speckles (específicamente autocorrelación y espectro de Fourier).<br/> El análisis completo y los resultados " +
+                    "pueden encontrarse en la tesis publicada en el siguiente enlace: " +
+                    "<a href='https://qmro.qmul.ac.uk/xmlui/handle/123456789/105754' target='_blank' rel='noopener noreferrer'>" +
+                    "PDF de la tesis – Queen Mary University of London</a>."
             },
             project2: {
                 heading: "Sitio web de portafolio usando Svelte y Vite",
                 details: "Sitio web personal creado con Svelte en VS Code, desplegado mediante GitHub y alojado en Netlify",
-                description: "Sitio web de portafolio personal desarrollado con Svelte en VS Code, desplegado a través de GitHub y actualizado automáticamente en Netlify con cada commit."
+                description: "Este portafolio y mi sitio freelance, <a href='https://c-aha.com'>c-aha.com</a>, " +
+                    "son dos proyectos conectados pero distintos.<br/><br/>" +
+                    "c-aha.com es la forma más sencilla de contactarme " +
+                    "para colaboraciones freelance. Fue desarrollado con <strong>Svelte</strong>, aprovechando " +
+                    "la reutilización de sus componentes y su configuración sencilla. El sitio se despliega " +
+                    "de forma continua en <strong>Netlify</strong>, actualizándose automáticamente después " +
+                    "de cada push <strong>Git</strong>.<br/><br/>" +
+                    "Este portafolio fue desarrollado con <strong>React</strong>, uno de los frameworks de JavaScript " +
+                    "más utilizados. Su estructura refleja la de mi proyecto en Svelte, lo que hizo que la transición " +
+                    "entre ambos fuera natural y eficiente. Decidí separar el portafolio del sitio freelance para " +
+                    "presentar mis proyectos de forma clara, manteniendo el contenido profesional en una página aparte.<br/><br/>" +
+                    "Este portafolio está alojado en <strong>GitHub Pages</strong>, con <strong>GitHub Actions</strong> " +
+                    "gestionando los despliegues automáticos tras cada push. Puedes encontrar ambos repositorios en mi " +
+                    "<a href='https://github.com/cesaraha'>perfil de GitHub</a>."
+
             },
             project3: {
                 heading: "Generador IA de operaciones matemáticas",
                 details: "Plataforma para practicar operaciones matemáticas con seguimiento del rendimiento y ejercicios adaptativos",
-                description: "Aplicación diseñada para una experiencia personalizada del estudiante, basada en su nivel, tiempo de reflexión y errores recurrentes. Motor: Python - Backend: FastAPI - Frontend: Svelte"
+                description: "Este proyecto es un <strong>generador de operaciones matemáticas</strong>. En un primer momento, " +
+                    "produce ejercicios aleatorios de las operaciones aritméticas seleccionadas (suma, resta, multiplicación " +
+                    "y división). El usuario también elige el número de ejercicios.<br/><br/>" +
+                    "Después de una primera sesión, el modelo empieza a aprender del rendimiento del usuario y adapta los " +
+                    "ejercicios a su nivel y a los errores más comunes. Por ejemplo, si se cometen errores en ejercicios de " +
+                    "multiplicación con la tabla del 7, el modelo propondrá más ejercicios similares para dar práctica y ayudar " +
+                    "al usuario a superar esa dificultad. Si se cometen demasiados errores, el nivel disminuirá, y si todo es " +
+                    "correcto, el nivel aumentará.<br/><br/>" +
+                    "Esta aplicación fue desarrollada con <strong>Svelte</strong> para el frontend, <strong>FastAPI</strong> " +
+                    "como backend, <strong>Axios</strong> para enlazarlos, y <strong>Python</strong> para el agente de aprendizaje."
+
             },
             project4: {
                 heading: "OCR en documentos escaneados e imágenes",
