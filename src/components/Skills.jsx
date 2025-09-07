@@ -35,7 +35,7 @@ const Skills = ({
     );
 
     return (
-        <div className="skills-grid-section margin-section">
+        <div className="skills-grid-section margin-section" id="Skills">
             <h1 className="section-title">{titleSection}</h1>
             <SkillSection nameSection={nameSection1} cards={section1Cards} />
             <SkillSection nameSection={nameSection2} cards={section2Cards} />
