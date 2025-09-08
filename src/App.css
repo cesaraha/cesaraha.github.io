@@ -594,6 +594,9 @@ nav a:hover::after {
 }
 
 @media (max-width: 950px) {
+  .section-title {
+    margin-top: var(--spacing0);
+  }
   .header {
     padding: var(--spacing1) var(--spacing3);
   }
@@ -652,6 +655,9 @@ nav a:hover::after {
 }
 
 @media (max-width: 600px) {
+  .section-title {
+    margin-top: var(--spacing5);
+  }
   .header {
     width: 95%;
     padding: var(--spacing2) var(--spacing3);
@@ -1342,6 +1348,7 @@ nav a:hover::after {
     flex-direction: column;
     gap: var(--spacing4);
     text-align: center;
+    align-items: center;
   }
 
   .footer-section {
