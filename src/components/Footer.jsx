@@ -1,6 +1,7 @@
 import React from 'react';
 import GithubIcon from '../assets/icons/GithubIcon';
 import LinkedinIcon from '../assets/icons/LinkedinIcon';
+import styles from '../styles/Footer.module.css';
 
 const Footer = ({
     contactTitle,
@@ -16,24 +17,24 @@ const Footer = ({
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="footer">
-            <div className="footer-content">
+        <footer className={styles.footer}>
+            <div className={styles.footerContent}>
                 {/* Contact Info Section */}
-                <div className="footer-section">
-                    <h3 className="footer-title">{contactTitle}</h3>
-                    <div className="contact-info">
+                <div className={styles.footerSection}>
+                    <h3 className={styles.footerTitle}>{contactTitle}</h3>
+                    <div className={styles.contactInfo}>
                         {email && (
-                            <div className="contact-item">
-                                <span className="contact-label">{emailLabel}:</span>
-                                <a href={`mailto:${email}`} className="contact-link">
+                            <div className={styles.contactItem}>
+                                <span className={styles.contactLabel}>{emailLabel}:</span>
+                                <a href={`mailto:${email}`} className={styles.contactLink}>
                                     {email}
                                 </a>
                             </div>
                         )}
                         {phone && (
-                            <div className="contact-item">
-                                <span className="contact-label">{phoneLabel}:</span>
-                                <a href={`tel:${phone}`} className="contact-link">
+                            <div className={styles.contactItem}>
+                                <span className={styles.contactLabel}>{phoneLabel}:</span>
+                                <a href={`tel:${phone}`} className={styles.contactLink}>
                                     {phone}
                                 </a>
                             </div>
@@ -42,13 +43,13 @@ const Footer = ({
                 </div>
 
                 {/* Social Links Section */}
-                <div className="footer-section">
-                    <h3 className="footer-title">{connectTitle}</h3>
-                    <div className="social-links">
+                <div className={styles.footerSection}>
+                    <h3 className={styles.footerTitle}>{connectTitle}</h3>
+                    <div className={styles.socialLinks}>
                         {githubUrl && (
                             <a
                                 href={githubUrl}
-                                className="social-link"
+                                className={styles.socialLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="GitHub Profile"
@@ -59,7 +60,7 @@ const Footer = ({
                         {linkedinUrl && (
                             <a
                                 href={linkedinUrl}
-                                className="social-link"
+                                className={styles.socialLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="LinkedIn Profile"
@@ -72,8 +73,8 @@ const Footer = ({
             </div>
 
             {/* Copyright Section */}
-            <div className="footer-bottom">
-                <p className="copyright">
+            <div className={styles.footerBottom}>
+                <p className={styles.copyright}>
                     © {currentYear} {rightsText}
                 </p>
             </div>

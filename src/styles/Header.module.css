@@ -1,0 +1,319 @@
+/* Header Styles - Mobile First */
+.header {
+  width: 95%;
+  max-width: none;
+  margin: var(--spacing1) auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--spacing1) var(--spacing3); /* Mobile first - smaller padding */
+  background: hsl(from var(--bg-color) h s calc(l - 10));
+  border-radius: var(--spacing5);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--white-10);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.headerVisible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  box-shadow: 0 2px 20px var(--black-10);
+}
+
+.headerHidden {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.headerSlideLeft {
+  transform: translateX(-150%) translateY(0);
+  opacity: 0;
+}
+
+.headerFadeOnly.headerHidden {
+  transform: translateX(-50%) translateY(0);
+  opacity: 0;
+}
+
+.headerHidden nav {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.centerContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Mobile first - nav is hidden by default, hamburger is shown */
+.nav {
+  display: none;
+}
+
+.ham {
+  display: block; /* Mobile first - hamburger is visible */
+  translate: -3.5vw 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding: var(--spacing0);
+  background: transparent;
+  border: none;
+  border-radius: var(--spacing1);
+  transition: background 0.2s ease;
+}
+
+.ham:hover {
+  background: var(--white-10);
+}
+
+.ham:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.ham img {
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+}
+
+/* Language selection styles - Mobile first */
+.languageSelection {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.langDropdownTrigger {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 4px 6px; /* Mobile first - smaller padding */
+  transition: all 0.3s ease;
+  background: var(--white-10);
+  border: 1px solid transparent;
+}
+
+.langDropdownTrigger:hover,
+.langDropdownTrigger:focus {
+  background: var(--white-20);
+  outline: 2px solid var(--accent-color);
+  outline-offset: 1px;
+}
+
+.dropdownArrow {
+  transition: transform 0.3s ease;
+  color: var(--text-color);
+}
+
+.dropdownArrowRotated {
+  transform: rotate(180deg);
+}
+
+.langDropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: var(--bg-color);
+  border: 1px solid var(--white-10);
+  border-radius: var(--spacing2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px var(--black-30);
+  min-width: 120px; /* Mobile first - smaller width */
+  z-index: 1001;
+  overflow: hidden;
+  padding: var(--spacing1) 0;
+}
+
+.langOption {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing2);
+  width: 100%;
+  padding: var(--spacing1) var(--spacing2); /* Mobile first - smaller padding */
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 13px; /* Mobile first - smaller font */
+  color: var(--text-color);
+}
+
+.langOption:hover,
+.langOption:focus {
+  background: var(--white-10);
+  outline: none;
+}
+
+.flag {
+  width: 20px; /* Mobile first - smaller flags */
+  height: 20px;
+  display: block;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.langName {
+  font-weight: 500;
+  translate: 0 -1px;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+  width: min(90px, 25%);
+  height: min(40px, 6vw);
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logoLink:hover {
+  transform: scale(1.05);
+}
+
+.nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+  padding: var(--spacing2) var(--spacing2);
+  border-radius: var(--spacing1);
+}
+
+.nav a:hover {
+  color: var(--accent-color);
+  background: var(--white-05);
+}
+
+.nav a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.nav a:not(:last-child)::before {
+  content: '|';
+  position: absolute;
+  right: calc(var(--spacing5) / -2);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-color);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Mobile first - show class affects mobile navigation */
+.show {
+  display: flex !important;
+}
+
+.nav.show {
+  flex-direction: column;
+  position: absolute;
+  top: calc(100% + var(--spacing2));
+  right: var(--spacing0); /* Mobile first - full width */
+  left: var(--spacing0);
+  translate: -3.5vw 0;
+  min-width: auto;
+  background: var(--bg-color);
+  padding: var(--spacing2);
+  gap: var(--spacing1);
+  border-radius: var(--spacing2);
+  border: 1px solid var(--white-10);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px var(--black-30);
+}
+
+.nav.show a {
+  padding: var(--spacing1) var(--spacing1);
+}
+
+.nav.show a:not(:last-child)::before {
+  display: none;
+}
+
+/* 480px and up (small tablets) */
+@media (min-width: 480px) {
+  .header {
+    padding: var(--spacing1) var(--spacing3);
+  }
+  
+  .nav.show {
+    right: 33.33%;
+    left: auto;
+    min-width: 200px;
+  }
+  
+  .langDropdown {
+    min-width: 140px;
+  }
+  
+  .langOption {
+    padding: var(--spacing1) var(--spacing3);
+    font-size: 14px;
+  }
+  
+  .flag {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .langDropdownTrigger {
+    padding: 6px 8px;
+  }
+}
+
+/* 768px and up (tablets) */
+@media (min-width: 768px) {
+  .header {
+    padding: var(--spacing1) var(--spacing4);
+  }
+  
+  .ham {
+    display: none;
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing5);
+  }
+}

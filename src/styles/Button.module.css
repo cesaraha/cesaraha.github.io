@@ -1,0 +1,136 @@
+/* Button styles - Mobile First */
+.blueBtn,
+.accentBtn {
+  display: block;
+  position: relative;
+  border-radius: var(--spacing2);
+  flex: 1 1 0;
+  align-items: center;
+  text-align: center;
+  border: 2px solid var(--text-color);
+  z-index: 1;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.accentBtn {
+  border-color: var(--accent-color);
+}
+
+.linkBlueBtn,
+.linkAccentBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  color: var(--bg-color);
+  background: var(--text-color);
+  padding: var(--spacing1) var(--spacing2);
+  border-radius: calc(var(--spacing2) - 2px);
+  border: 2px solid var(--bg-color);
+  font: clamp(0.45rem, 0.8rem, 1rem)/1.5em var(--ff-secondary); /* Mobile first - smaller font */
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.linkAccentBtn {
+  background: var(--accent-color);
+}
+
+.accentBtn:hover,
+.blueBtn:hover {
+  transform: scale(1.05);
+}
+
+.accentBtn:hover .linkAccentBtn {
+  background: hsl(from var(--accent-color) h s calc(l - 5));
+}
+
+.blueBtn:hover .linkBlueBtn {
+  background: hsl(from var(--text-color) h s calc(l - 5));
+}
+
+.accentBtn::before,
+.accentBtn::after,
+.blueBtn::before,
+.blueBtn::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  border-radius: var(--spacing2);
+  padding: 0;
+  z-index: -2;
+  background-color: var(--text-color);
+}
+
+.accentBtn::before,
+.accentBtn::after {
+  background-color: var(--accent-color);
+}
+
+.accentBtn::before,
+.blueBtn::before {
+  filter: blur(var(--spacing3));
+  opacity: 0.4;
+}
+
+.accentBtn::after {
+  background-color: var(--accent-color);
+  z-index: -1;
+}
+
+.blueBtn::after {
+  background-color: var(--text-color);
+  z-index: -1;
+}
+
+.accentBtnDisabled,
+.blueBtnDisabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.accentBtnDisabled .linkAccentBtn {
+  background: hsl(from var(--accent-color) h s calc(l - 20));
+}
+
+.blueBtnDisabled .linkBlueBtn {
+  background: hsl(from var(--text-color) h s calc(l - 20));
+}
+
+.accentBtnDisabled:hover,
+.blueBtnDisabled:hover {
+  transform: none;
+}
+
+.accentBtnDisabled:hover .linkAccentBtn {
+  background: hsl(from var(--accent-color) h s calc(l - 20));
+}
+
+.blueBtnDisabled:hover .linkBlueBtn {
+  background: hsl(from var(--text-color) h s calc(l - 20));
+}
+
+/* 480px and up (small tablets) */
+@media (min-width: 480px) {
+  .linkBlueBtn,
+  .linkAccentBtn {
+    font: clamp(0.45rem, 0.75rem, 1rem)/1.5em var(--ff-secondary);
+  }
+}
+
+/* 768px and up (tablets) */
+@media (min-width: 768px) {
+  .linkBlueBtn,
+  .linkAccentBtn {
+    font: var(--p);
+  }
+}

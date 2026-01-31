@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import styles from '../styles/Header.module.css';
 
 const Header = ({ about, projects, skills }) => {
   const [hamOpen, setHamOpen] = useState(false);
@@ -114,14 +115,14 @@ const Header = ({ about, projects, skills }) => {
   }, [lastScrollY, hamOpen, langDropdownOpen]);
 
   return (
-    <header className={`header ${isHeaderVisible ? 'header-visible' : 'header-hidden'}`}>
-      <a href="/" className="logo-link">
-        <img className="logo" src="/images/caha-logo-blue.png" alt="Caha logo" />
+    <header className={`${styles.header} ${isHeaderVisible ? styles.headerVisible : styles.headerHidden}`}>
+      <a href="/" className={styles.logoLink}>
+        <img className={styles.logo} src="/images/cesaraha-blue.png" alt="cesaraha logo" />
       </a>
-
-      <div className="center-content">
+      {/* 
+      <div className={styles.centerContent}>
         <button
-          className="ham"
+          className={styles.ham}
           onClick={toggleMenu}
           ref={hamRef}
           aria-label="Toggle navigation"
@@ -132,26 +133,27 @@ const Header = ({ about, projects, skills }) => {
             alt="" 
           />
         </button>
-        <nav className={hamOpen ? 'show' : ''} ref={navRef}>
+        <nav className={`${styles.nav} ${hamOpen ? styles.show : ''}`} ref={navRef}>
           <a href="#About">{about}</a>
           <a href="#Projects">{projects}</a>
           <a href="#Skills">{skills}</a>
         </nav>
       </div>
+      */}
 
-      <div className="language-selection" ref={langRef}>
+      <div className={styles.languageSelection} ref={langRef}>
         <button
           type="button"
-          className="lang-dropdown-trigger"
+          className={styles.langDropdownTrigger}
           onClick={toggleLangDropdown}
           onKeyDown={handleDropdownToggleKeydown}
           aria-label="Language selection"
           aria-expanded={langDropdownOpen}
           aria-haspopup="true"
         >
-          <img src={currentLang.flag} className="flag" alt={currentLang.name} />
+          <img src={currentLang.flag} className={styles.flag} alt={currentLang.name} />
           <svg
-            className={`dropdown-arrow ${langDropdownOpen ? 'rotated' : ''}`}
+            className={`${styles.dropdownArrow} ${langDropdownOpen ? styles.dropdownArrowRotated : ''}`}
             width="12"
             height="12"
             viewBox="0 0 24 24"
@@ -167,18 +169,18 @@ const Header = ({ about, projects, skills }) => {
           </svg>
         </button>
         {langDropdownOpen && (
-          <div className="lang-dropdown">
+          <div className={styles.langDropdown}>
             {otherLanguages.map(lang => (
               <button
                 key={lang.code}
                 type="button"
-                className="lang-option"
+                className={styles.langOption}
                 onClick={() => handleLanguageSelect(lang.code)}
                 onKeyDown={(e) => handleLangKeydown(e, lang.code)}
                 aria-label={`Switch to ${lang.name}`}
               >
-                <img src={lang.flag} className="flag" alt={lang.name} />
-                <span className="lang-name">{lang.name}</span>
+                <img src={lang.flag} className={styles.flag} alt={lang.name} />
+                <span className={styles.langName}>{lang.name}</span>
               </button>
             ))}
           </div>

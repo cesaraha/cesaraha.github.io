@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Button from './Button';
+import Modal from './Modal';
+import styles from '../styles/Projects.module.css';
 
 const Projects = ({
   titleSection,
@@ -18,37 +21,12 @@ const Projects = ({
   const openModal = (project) => {
     setCurrentProject(project);
     setShowModal(true);
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
   };
 
   const closeModal = () => {
     setShowModal(false);
     setCurrentProject(null);
-    document.body.style.overflow = ''; // Restore scrolling
   };
-
-  const handleKeydown = (event) => {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-  };
-
-  const handleOverlayClick = (event) => {
-    if (event.target === event.currentTarget) {
-      closeModal();
-    }
-  };
-
-  useEffect(() => {
-    const handleEscapeKey = (event) => handleKeydown(event);
-    document.addEventListener('keydown', handleEscapeKey);
-
-    return () => {
-      document.removeEventListener('keydown', handleEscapeKey);
-      // Cleanup: restore scrolling if component unmounts while modal is open
-      document.body.style.overflow = '';
-    };
-  }, []);
 
   const projects = [
     { heading: heading1, details: details1, fullDescription: fullDescription1, img: img1, ref: ref1, display: display1, isDisabled: isDisabled1 },
@@ -63,20 +41,20 @@ const Projects = ({
   const visibleProjects = projects.filter(project => project.display !== 'display-not');
 
   const ProjectCard = ({ project, index }) => (
-    <div className={`card-link-wrapper ${project.display || ''}`}>
-      <div className="card">
-        <div className="image-content">
-          <span className="overlay"></span>
-          <div className="card-image">
-            <img src={project.img} className="card-img" alt={`Project ${index + 1}`} />
+    <div className={`${styles.cardLinkWrapper} ${project.display || ''}`}>
+      <div className={styles.card}>
+        <div className={styles.imageContent}>
+          <span className={styles.overlay}></span>
+          <div className={styles.cardImage}>
+            <img src={project.img} className={styles.cardImg} alt={`Project ${index + 1}`} />
           </div>
         </div>
-        <div className="card-content">
-          <h5 className="card-title">{project.heading}</h5>
-          <p className="card-text">{project.details}</p>
-          <div className="button-group">
-            <button
-              className="blue-btn"
+        <div className={styles.cardContent}>
+          <h5 className={styles.cardTitle}>{project.heading}</h5>
+          <p className={styles.cardText}>{project.details}</p>
+          <div className={styles.buttonGroup}>
+            <Button
+              variant="blue"
               onClick={() =>
                 openModal({
                   title: project.heading,
@@ -85,18 +63,17 @@ const Projects = ({
                 })
               }
             >
-              <span className="link-blue-btn">{readMore}</span>
-            </button>
-            <a
-              href={project.isDisabled ? '#' : project.ref}
-              className={`accent-btn ${project.isDisabled ? 'accent-btn-disabled' : ''}`}
-              onClick={project.isDisabled ? (e) => e.preventDefault() : null}
-              aria-disabled={project.isDisabled}
+              {readMore}
+            </Button>
+            <Button
+              variant="accent"
+              href={project.ref}
+              disabled={project.isDisabled}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <span className="link-accent-btn">{viewOnGithub}</span>
-            </a>
+              {viewOnGithub}
+            </Button>
           </div>
         </div>
       </div>
@@ -105,57 +82,27 @@ const Projects = ({
 
   return (
     <>
-      <div className="card-section margin-section" id="Projects">
+      <div className={`${styles.cardSection} margin-section`} id="Projects">
         <h1 className="section-title">{titleSection}</h1>
-        <div className="card-group">
+        <div className={styles.cardGroup}>
           {visibleProjects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
       </div>
 
-      {showModal && currentProject && (
-        <div
-          className="modal-overlay"
-          onClick={handleOverlayClick}
-          onKeyDown={handleKeydown}
-          role="dialog"
-          aria-modal="true"
-          tabIndex="-1"
-        >
-          <div className="modal-content">
-            <button className="modal-close" onClick={closeModal} aria-label="Close modal">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M18 6L6 18M6 6L18 18"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </button>
-
-            <div className="modal-header">
-              <img src={currentProject.image} alt={currentProject.title} className="modal-image" />
-              <h2 className="modal-title">{currentProject.title}</h2>
-            </div>
-
-            <div className="modal-body">
-              <p
-                className="modal-description"
-                dangerouslySetInnerHTML={{ __html: currentProject.description }}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+      <Modal
+        isOpen={showModal}
+        onClose={closeModal}
+        title={currentProject?.title}
+        image={currentProject?.image}
+        imageAlt={currentProject?.title}
+      >
+        <p
+          className="modal-description"
+          dangerouslySetInnerHTML={{ __html: currentProject?.description }}
+        />
+      </Modal>
     </>
   );
 };

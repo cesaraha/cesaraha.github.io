@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles/Skills.module.css';
 
 const Skills = ({
     titleSection,
@@ -14,19 +15,19 @@ const Skills = ({
     const SkillCard = ({ card }) => {
         const IconComponent = card.icon;
         return (
-            <div className="skill-card">
-                <div className="skill-card-icon">
+            <div className={styles.skillCard}>
+                <div className={styles.skillCardIcon}>
                     <IconComponent />
                 </div>
-                <div className="skill-card-title">{card.title}</div>
+                <div className={styles.skillCardTitle}>{card.title}</div>
             </div>
         );
     };
 
     const SkillSection = ({ nameSection, cards }) => (
-        <div className="skills-each-section">
-            <h5 className="skills-name-section">{nameSection}</h5>
-            <div className="skills-container-squares">
+        <div className={styles.skillsEachSection}>
+            <h5 className={styles.skillsNameSection}>{nameSection}</h5>
+            <div className={styles.skillsContainerSquares}>
                 {cards.map((card, index) => (
                     <SkillCard key={index} card={card} />
                 ))}
@@ -35,7 +36,7 @@ const Skills = ({
     );
 
     return (
-        <div className="skills-grid-section margin-section" id="Skills">
+        <div className={`${styles.skillsGridSection} margin-section`} id="Skills">
             <h1 className="section-title">{titleSection}</h1>
             <SkillSection nameSection={nameSection1} cards={section1Cards} />
             <SkillSection nameSection={nameSection2} cards={section2Cards} />
