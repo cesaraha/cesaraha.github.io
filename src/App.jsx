@@ -1,69 +1,69 @@
-import React from 'react';
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
+import React from "react";
+import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
+import Header from "./components/Header";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import Footer from "./components/Footer";
 
 // Importing SVG icons
-import PythonIcon from './assets/icons/PythonIcon';
-import JupyterIcon from './assets/icons/JupyterIcon';
-import AnacondaIcon from './assets/icons/AnacondaIcon';
-import NumpyIcon from './assets/icons/NumpyIcon';
-import ScipyIcon from './assets/icons/ScipyIcon';
-import SympyIcon from './assets/icons/SympyIcon';
-import TensorflowIcon from './assets/icons/TensorflowIcon';
-import KerasIcon from './assets/icons/KerasIcon';
-import ScikitLearnIcon from './assets/icons/ScikitlearnIcon';
-import OpenCvIcon from './assets/icons/OpencvIcon';
-import PandasIcon from './assets/icons/PandasIcon';
-import HtmlIcon from './assets/icons/HtmlIcon';
-import CssIcon from './assets/icons/CssIcon';
-import JavascriptIcon from './assets/icons/JavascriptIcon';
-import MySqlIcon from './assets/icons/MysqlIcon';
-import GitHubIcon from './assets/icons/GithubIcon';
-import NetlifyIcon from './assets/icons/NetlifyIcon';
-import DjangoIcon from './assets/icons/DjangoIcon';
-import ReactIcon from './assets/icons/ReactIcon';
-import SvelteIcon from './assets/icons/SvelteIcon';
-import FastApiIcon from './assets/icons/FastapiIcon';
-import AxiosIcon from './assets/icons/AxiosIcon';
+import PythonIcon from "./assets/icons/PythonIcon";
+import JupyterIcon from "./assets/icons/JupyterIcon";
+import AnacondaIcon from "./assets/icons/AnacondaIcon";
+import NumpyIcon from "./assets/icons/NumpyIcon";
+import ScipyIcon from "./assets/icons/ScipyIcon";
+import SympyIcon from "./assets/icons/SympyIcon";
+import TensorflowIcon from "./assets/icons/TensorflowIcon";
+import KerasIcon from "./assets/icons/KerasIcon";
+import ScikitLearnIcon from "./assets/icons/ScikitlearnIcon";
+import OpenCvIcon from "./assets/icons/OpencvIcon";
+import PandasIcon from "./assets/icons/PandasIcon";
+import HtmlIcon from "./assets/icons/HtmlIcon";
+import CssIcon from "./assets/icons/CssIcon";
+import JavascriptIcon from "./assets/icons/JavascriptIcon";
+import MySqlIcon from "./assets/icons/MysqlIcon";
+import GitHubIcon from "./assets/icons/GithubIcon";
+import NetlifyIcon from "./assets/icons/NetlifyIcon";
+import DjangoIcon from "./assets/icons/DjangoIcon";
+import ReactIcon from "./assets/icons/ReactIcon";
+import SvelteIcon from "./assets/icons/SvelteIcon";
+import FastApiIcon from "./assets/icons/FastapiIcon";
+import AxiosIcon from "./assets/icons/AxiosIcon";
 
-import './App.css';
+import "./App.css";
 
 const AppContent = () => {
   const { t } = useLanguage();
 
   const section1Cards = [
-    { icon: PythonIcon, title: 'Python' },
-    { icon: JupyterIcon, title: 'Jupyter' },
-    { icon: AnacondaIcon, title: 'Anaconda' }
+    { icon: PythonIcon, title: "Python" },
+    { icon: JupyterIcon, title: "Jupyter" },
+    { icon: AnacondaIcon, title: "Anaconda" },
   ];
   const section2Cards = [
-    { icon: NumpyIcon, title: 'NumPy' },
-    { icon: ScipyIcon, title: 'SciPy' },
-    { icon: SympyIcon, title: 'SymPy' },
-    { icon: TensorflowIcon, title: 'TensorFlow' },
-    { icon: KerasIcon, title: 'Keras' },
-    { icon: ScikitLearnIcon, title: 'Scikit-learn' },
-    { icon: OpenCvIcon, title: 'OpenCV' },
-    { icon: PandasIcon, title: 'Pandas' }
+    { icon: NumpyIcon, title: "NumPy" },
+    { icon: ScipyIcon, title: "SciPy" },
+    { icon: SympyIcon, title: "SymPy" },
+    { icon: TensorflowIcon, title: "TensorFlow" },
+    { icon: KerasIcon, title: "Keras" },
+    { icon: ScikitLearnIcon, title: "Scikit-learn" },
+    { icon: OpenCvIcon, title: "OpenCV" },
+    { icon: PandasIcon, title: "Pandas" },
   ];
   const section3Cards = [
-    { icon: HtmlIcon, title: 'HTML' },
-    { icon: CssIcon, title: 'CSS' },
-    { icon: JavascriptIcon, title: 'JavaScript' },
-    { icon: MySqlIcon, title: 'MySQL' }
+    { icon: HtmlIcon, title: "HTML" },
+    { icon: CssIcon, title: "CSS" },
+    { icon: JavascriptIcon, title: "JavaScript" },
+    { icon: MySqlIcon, title: "MySQL" },
   ];
   const section4Cards = [
-    { icon: DjangoIcon, title: 'Django' },
-    { icon: FastApiIcon, title: 'FastAPI' },
-    { icon: ReactIcon, title: 'React' },
-    { icon: SvelteIcon, title: 'Svelte' },
-    { icon: AxiosIcon, title: 'Axios' },
-    { icon: GitHubIcon, title: 'GitHub' },
-    { icon: NetlifyIcon, title: 'Netlify' }
+    { icon: DjangoIcon, title: "Django" },
+    { icon: FastApiIcon, title: "FastAPI" },
+    { icon: ReactIcon, title: "React" },
+    { icon: SvelteIcon, title: "Svelte" },
+    { icon: AxiosIcon, title: "Axios" },
+    { icon: GitHubIcon, title: "GitHub" },
+    { icon: NetlifyIcon, title: "Netlify" },
   ];
 
   return (
@@ -73,6 +73,7 @@ const AppContent = () => {
         projects={t.navigation.projects}
         skills={t.navigation.skills}
       />
+      {/*
       <About
         name={t.about.name}
         title={t.about.title}
@@ -80,6 +81,15 @@ const AppContent = () => {
         paragraph2={t.about.paragraph2}
         profileImage="/images/fotocv.jpg"
       />
+      */}
+      <About
+        name={t.redirection.name}
+        title={t.redirection.title}
+        paragraph1={t.redirection.paragraph1}
+        paragraph2={t.redirection.paragraph2}
+        profileImage="/images/fotocv.jpg"
+      />
+      {/*
       <Projects
         titleSection={t.projects.title}
         readMore={t.readMore}
@@ -94,7 +104,7 @@ const AppContent = () => {
         heading2={t.projects.project2.heading}
         details2={t.projects.project2.details}
         fullDescription2={t.projects.project2.description}
-        img2="/images/caha-logo-blue.png"
+        img2="/images/c-blue.png"
         ref2="https://github.com/CesarHdezAlvz/my-portfolio-website"
         display2=''
         isDisabled2={false}
@@ -145,6 +155,7 @@ const AppContent = () => {
         section3Cards={section3Cards}
         section4Cards={section4Cards}
       />
+      */}
       <Footer
         contactTitle={t.footer.contactTitle} // e.g., "Contact"
         connectTitle={t.footer.connectTitle} // e.g., "Connect"
@@ -168,4 +179,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
